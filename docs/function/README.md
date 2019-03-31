@@ -52,6 +52,8 @@ dynamic greeting() {
 
 ## 函数的参数
 
+### 可选位置参数
+
 和 JavaScript 不同的是，Dart 中的函数 **必须显示的去表示某些参数是可选的**，：
 
 ```dart
@@ -82,7 +84,7 @@ String say(String name, [int age]) {
 
 ?> 和 JavaScript 一样，Dart 中也可以使用 `${}` 来表示字符串插值，不同的是 JavaScript 中必须在 <code>\`</code> 符号表示的字符串中才能使用 `${}`，而 Dart 中在 `'` 或者 `"` 表示的字符串中即可使用 `${}` 来表示字符串插值，而且 Dart 中还可以用 `$variableName` 来简化表示，比如上面的 `$name`。
 
-## 命名参数
+### 可选命名参数
 
 函数声明时可以用 `{}` 包裹参数的方式来声明 **命名参数**：
 
@@ -98,3 +100,91 @@ String say({String name, [int age]}) {
 say(name: '大板栗'); // 我叫大板栗
 say(name: '大板栗', age: 18); // 我叫大板栗，今年 18 岁。
 ```
+
+JavaScript 版本：
+
+```js
+function say({name, age}) {
+    return `我叫${name}，今年 ${age} 岁。`;
+}
+say({ name: '大板栗', age: 18 }); // 我叫大板栗，今年 18 岁。
+```
+
+?> 命名参数在 Flutter 中应用非常广泛，如 `Container(width: 100, height: 100)` 。
+
+### 默认参数值
+
+和 JavaScript 中的 ES6 语法一样，Dart 中函数也可以使用 `=` 来设置参数默认值，如果没有提供则默认值，在 JavaScript 中该参数值为 `undefined`，在 Dart 中则为 `null`：
+
+ES6 版本：
+
+```js
+function say(name, age = 18) {
+    return `我叫${name}，今年 ${age} 岁。`;
+}
+say(); // 我叫undefined，今年 18 岁。
+
+function say(name = '大板栗', age = 18) {
+    return `我叫${name}，今年 ${age} 岁。`;
+}
+say(); // 我叫大板栗，今年 18 岁。
+say('小板栗', 16); // 我叫小板栗，今年 16 岁。
+```
+
+Dart 版本：
+
+```dart
+// 位置参数没有设置默认值
+String say(String name, int age = 18) {
+    return '我叫${name}，今年 ${age} 岁。';
+}
+say(); // 我叫null，今年 18 岁。
+
+// 位置参数设置了默认值
+String say(String name = '大板栗', int age = 18) {
+    return '我叫${name}，今年 ${age} 岁。';
+}
+say(); // 我叫大板栗，今年 18 岁。
+
+// 可选参数默认值
+String say(String name = '大板栗', [int age = 18]) {
+    return '我叫${name}，今年 ${age} 岁。';
+}
+say(); // 我叫大板栗，今年 18 岁。
+```
+
+?> 会发现在提供了参数默认值的情况下，参数无需 `[]` 修饰也可以达到可选参数的效果。
+
+也可以使用 `List`、`Map` 等数据类型作为参数的默认值：
+
+```dart
+void doSomething({
+    List<String> fruits = const ['apple', 'pear'],
+    Map<String, String> configrue = const {
+        'name': 'flutter',
+        'version': '1.0.0',
+        'env': 'production',
+    },
+}) {
+    print('fruits: ${fruits}');
+    print('configure: ${configure}');
+}
+```
+
+## 小结
+
+和 JavaScript 一样，Dart 中的函数也可以支持：
+
+- **默认参数值**
+- **箭头函数**
+
+不同的是 Dart 中的函数还支持：
+
+- **命名函数（JavaScript 中是使用对象来模拟）**
+- **可选参数（Dart 中需要 `[]` 修饰）**
+- **定义返回值的类型**
+
+<!-- |    | 同 | 异 |
+|:--:|:--:|:--:|
+|JavaScript|支持||
+|Dart||| -->
