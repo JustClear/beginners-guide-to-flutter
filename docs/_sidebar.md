@@ -2,5 +2,8 @@
 - <span style="font-size: 18px;">基础语法</span>
     - <a href="./#/introduction/" style="font-size: 18px;">介绍</a>
     - <a href="./#/variable-declaration/" style="font-size: 18px;">变量声明</a>
+    - <a href="./#/built-in-types/" style="font-size: 18px;">内置类型</a>
     - <a href="./#/function/" style="font-size: 18px;">函数</a>
-    - <a href="./#/pub/" style="font-size: 18px;">Pub</a>
+    - <a href="./#/list/" style="font-size: 18px;">列表</a>
+    - <a href="./#/map/" style="font-size: 18px;">集合</a>
+    - <a href="./#/pub/" style="font-size: 18px;">公共仓库</a>
