@@ -2,7 +2,8 @@
   "name": "flutter-tutorials-for-front-end",
   "version": "1.0.0",
   "scripts": {
-    "start": "docsify serve docs"
+    "start": "flutter run",
+    "docs": "docsify serve docs"
   },
   "repository": "https://github.com/JustClear/flutter-tutorials-for-front-end.git",
   "author": "大板栗 <576839360@qq.com>",
