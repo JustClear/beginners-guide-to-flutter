@@ -15,6 +15,14 @@ name = 🌰;
 
 上面的代码在 JavaScript 中运行没有问题，但是 Dart 是一种 **强类型语言**，**变量的类型一旦确定以后，将不能再次被改变**。
 
+如果声明了一个变量但是没有赋值，那么 Dart 会给该变量一个 `null` 的初始默认值（类比 JavaScript 则是一个 `undifined` 值）：
+
+```dart
+// 被初始化为 null
+// name === null
+var name;
+```
+
 Dart 中的 `const` 和 `final` 两个关键字都可以用来声明一个 **常量**：
 
 ```dart
@@ -29,13 +37,26 @@ final name = '大板栗';
 
 既然 `const` 和 `final` 都是用来声明常量的，那么它们之间肯定是有区别的，否则没必要多此一举：
 
-一旦某个值赋值给了由 `const` 声明的变量，那么 **整个变量值** 将永远不能被改变：
+一旦某个值赋值给了由 `const` 声明的变量，那么该值将 **永远不能被改变**：
 
 ```dart
 const fruits = ['apple', 'banana', 'strawberry'];
 // 一旦赋值，将不能以任何方式改变其值
-fruits.add('pear‘);
+fruits[0] = 'pear';
+
+var numm = const [1, 2, 3, 4, 5, 6];
+// 尽管是用 var 关键字声明的变量
+// 但是值全是用 const 关键字修饰过
+// 所以下面的代码将会报错
+nums[0] = 1;
 ```
+
+<!-- `const` 不仅是用来定义常量的，也可以定义构造函数为 `const` 类型，被 `const` 定义的构造函数所创建的对象是 **不可变** 的：
+
+```dart
+const List fruits = ['apple', 'banana', 'strawberry'];
+var fruits = const List();
+``` -->
 
 用 `final` 声明的变量只能被赋值一次：
 
@@ -73,4 +94,10 @@ type = 10086; // work
 ```dart
 // 表示声明一个 List 类型的变量
 List fruits = ['apple', 'banana', 'strawberry'];
+// 表示声明一个 String 类型的变量
+String name = '大板栗';
 ```
+
+## 相关阅读
+
+- [Const, Static, Final, Oh my!](https://news.dartlang.org/2012/06/const-static-final-oh-my.html)
