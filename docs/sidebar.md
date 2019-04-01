@@ -25,7 +25,7 @@
     - [Align](/widgets/align/)
     - [ConstrainedBox](/widgets/constrained-box/)
     - [LimitedBox](/widgets/limited-box/)
-    - [SizedBox](/widgets/sided-box/)
+    - [SizedBox](/widgets/sized-box/)
     - [Row](/widgets/row/)
     - [Column](/widgets/column/)
     - [Stack](/widgets/stack/)
