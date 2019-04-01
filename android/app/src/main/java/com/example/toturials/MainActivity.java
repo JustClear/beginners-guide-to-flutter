@@ -1,4 +1,4 @@
-package com.example.sticker;
+package com.example.tutorials;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
