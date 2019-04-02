@@ -171,6 +171,14 @@ List nums = [1, 2, 3];
 List added = nums.map((a) => a + 1).toList(); // [2, 3, 4]
 ```
 
+`.where()` 基本与 JavaScript 中的 `.filter()` 一致，不同的是 Dart 中 `where` 返回的是 `Iterable`，得调用 `.toList()` 才能获取到 `where` 后的列表：
+
+```dart
+List nums = [1, 2, 3];
+List result = nums.where((a) => a == 1).toList(); // [1]
+List result2 = nums.where((a) => a > 1).toList(); // [2, 3]
+```
+
 `.reduce()` 和 `.flod()`
 
 ```dart
