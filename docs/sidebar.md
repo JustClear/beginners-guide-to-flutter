@@ -7,6 +7,7 @@
 
 - Todo 应用
     - [一个简单的页面](/simple-page/)
+    - [生命周期](/lifecycle/)
     - [路由](/route/)
     - [包管理](/pub/)
     - [资源管理](/assets/)
