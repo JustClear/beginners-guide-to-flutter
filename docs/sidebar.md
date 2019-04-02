@@ -5,10 +5,10 @@
     - [列表](/list/)
     - [集合](/map/)
 
-- Todo 应用
+- 起步
     - [一个简单的页面](/simple-page/)
-    - [生命周期](/lifecycle/)
     - [路由](/route/)
+    - [生命周期](/lifecycle/)
     - [包管理](/pub/)
     - [资源管理](/assets/)
 
