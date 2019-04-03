@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import './pages/home.dart' show Home;
+import './pages/about.dart' show About;
 
-void main() {
-  runApp(App());
-}
+void main() => runApp(App());
 
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        '大板栗',
-        textDirection: TextDirection.ltr,
-      ),
+    return MaterialApp(
+      title: 'Title',
+      home: Home(),
+      routes: {
+        'about': (context) => About(),
+      },
     );
   }
 }
